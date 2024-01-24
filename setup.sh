@@ -512,10 +512,10 @@ if [ "$CMD_LINE" -eq 1 ] || [ "${AUTO}" -eq 1 ]; then
 else
 	echo "*****************************************************";
 	echo "*";
-	echo "* DirectAdmin NULLED 1.64.2:";
-	echo "*   https://www.facebook.com/ptp.puaruvn/";
-	echo "*";	
-
+	echo "* DirectAdmin V1.64.2: NULLED License All Feature";
+ 	echo "* Nulled By ATSi (Anjas Tech Software Industries)";
+	echo "* https://github.com/anjasamar";
+	echo "* Indonesia Developer enthusiasm 2024";
 	echo "*";
 fi
 
