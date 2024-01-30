@@ -13,6 +13,15 @@
 # after this has been done, you can type ./setup.sh to run the script.
 #
 ###############################################################################
+	echo "*****************************************************";
+	echo "*";
+	echo "* DirectAdmin V1.64.2: NULLED License All Feature";
+ 	echo "* Nulled By ATSi (Anjas Tech Software Industries)";
+	echo "* https://github.com/anjasamar";
+	echo "* Indonesia Developer Enthusiasm 2024";
+	echo "*";
+ 	sleep 15;
+
 
 OS=`uname`;
 
@@ -515,9 +524,9 @@ else
 	echo "* DirectAdmin V1.64.2: NULLED License All Feature";
  	echo "* Nulled By ATSi (Anjas Tech Software Industries)";
 	echo "* https://github.com/anjasamar";
-	echo "* Indonesia Developer enthusiasm 2024";
+	echo "* Indonesia Developer Enthusiasm 2024";
 	echo "*";
- 	sleep 10;
+ 	sleep 15;
 fi
 
 		echo "* Installing pre-install packages ....";
@@ -996,6 +1005,7 @@ fi
 ##########
 
 echo "memulai pra-pemeriksaan, harap tunggu...";
+sleep 5;
 
 # Things to check for:
 #
