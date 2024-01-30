@@ -171,8 +171,8 @@ esac
 			HOST=`hostname -f`
 		fi
 		if [ "${HOST}" = "localhost" ]; then
-			echo "'localhost' is not valid for the hostname. Setting it to server.hostname.com, you can change it later in Admin Settings"
-			HOST=server.hostname.com
+			echo "'localhost' tidak valid untuk nama host. Menyetelnya ke cp.atsi.cloud, Anda dapat mengubahnya nanti di Pengaturan Admin"
+			HOST=cp.atsi.cloud
 		fi
 		if [ "$OS" = "FreeBSD" ]; then
 			EDEVS=`ifconfig -l`
@@ -221,8 +221,8 @@ else
 	B64=`uname -m | grep -c 64`
 	if [ "$B64" -gt 0 ]; then
 		echo "*** 64-bit OS ***";
-		echo "*** SCRIPT INSTALL DA 1.64.2 NULLED BY ANJASAMAR ***";
-		sleep 2;
+		echo "*** SCRIPT INSTALL DA V1.64.2 NULLED BY ATSi - Anjas Amar Pradana ***";
+		sleep 4;
 		B64=1
 	fi
 fi
@@ -517,9 +517,11 @@ else
 	echo "* https://github.com/anjasamar";
 	echo "* Indonesia Developer enthusiasm 2024";
 	echo "*";
+ 	sleep 10;
 fi
 
 		echo "* Installing pre-install packages ....";
+  		sleep 5;
 		if [ "$OS" = "FreeBSD" ]; then
 			if [ "${OS_MAJ_VER}" -ge 12 ]; then
 				pkg install -y gcc gmake perl5 wget bison flex cyrus-sasl cmake python autoconf libtool libarchive iconv bind911 mailx webalizer gettext-runtime udns sudo psmisc
@@ -700,8 +702,8 @@ else
 		done;
 
 		if [ $COUNT -eq 0 ]; then
-        		echo "Could not find your ethernet device.";
-	        	echo -n "Please enter the name of your ethernet device: ";
+        		echo "Tidak dapat menemukan perangkat ethernet Anda.";
+	        	echo -n "Silakan masukkan nama perangkat ethernet Anda Contoh Default eth0: ";
 	        	read ETH_DEV;
 		elif [ $COUNT -eq 1 ]; then
 
@@ -713,17 +715,17 @@ else
 				DIP=`/sbin/ifconfig $DEVS | grep 'inet ' | awk '{print $2}' | cut -d: -f2`;
 			fi
 
-        		echo -n "Is $DEVS your network adaptor with the license IP ($DIP)? (y,n) : ";
+        		echo -n "Benarkah $DEVS adaptor jaringan Anda dengan IP lisensi ($DIP)? (y,n) : ";
 		        read yesno;
         		if [ "$yesno" = "n" ]; then
-                		echo -n "Enter the name of the ethernet device you wish to use : ";
+                		echo -n "Masukkan nama perangkat ethernet yang ingin Anda gunakan : ";
 		                read ETH_DEV;
 		        else
 	        	        ETH_DEV=$DEVS
 		        fi
 		else
 	        	# more than one
-		        echo "The following ethernet devices/IPs were found. Please enter the name of the device you wish to use:";
+		        echo "Perangkat ethernet/IP berikut ditemukan. Silakan masukkan nama perangkat yang ingin Anda gunakan:";
 		        echo "";
 		        #echo $DEVS;
 		        for i in $DEVS; do
@@ -738,7 +740,7 @@ else
 		        done;
 
 		        echo "";
-		        echo -n "Enter the device name: ";
+		        echo -n "Masukkan nama perangkat, Defaultnya eth0: ";
 		        read ETH_DEV;
 		fi
 	fi
@@ -783,26 +785,26 @@ fi
 
 if [ $CMD_LINE -eq 0 ]; then
 
-	echo -n "Your external IP: ";
+	echo -n "IP eksternal Anda: ";
 	wget -q -O - http://myip.directadmin.com
 	echo "";
-	echo "The external IP should typically match your license IP.";
+	echo "IP eksternal biasanya harus sesuai dengan IP lisensi Anda.";
 	echo "";
 
 	if [ "$IP" = "" ]; then
 		yesno="n";
 	else
-		echo -n "Is $IP the IP in your license? (y,n) : ";
+		echo -n "Benarkah $IP IP dalam lisensi Anda? (y,n) : ";
 		read yesno;
 	fi
 
 	if [ "$yesno" = "n" ]; then
-		echo -n "Enter the IP used in your license file : ";
+		echo -n "Masukkan IP yang digunakan dalam file lisensi Anda : ";
 		read IP;
 	fi
 
 	if [ "$IP" = "" ]; then
-		echo "The IP entered is blank.  Please try again, and enter a valid IP";
+		echo "IP yang dimasukkan kosong. Silakan coba lagi, dan masukkan IP yang valid";
 	fi
 fi
 
@@ -812,7 +814,7 @@ echo "";
 echo "DirectAdmin will now be installed on: $OS $OS_VER";
 
 if [ $CMD_LINE -eq 0 ]; then
-	echo -n "Is this correct? (must match license) (y,n) : ";
+	echo -n "Apakah ini benar? (harus sesuai dengan lisensi) (y,n) : ";
 	read yesno;
 
 	if [ "$yesno" = "n" ]; then
@@ -847,10 +849,10 @@ if [ $CMD_LINE -eq 0 ]; then
 		PHP_RUID_DEF=no
 	else
 	        echo "";
-	        echo "Select your desired apache/php setup. Option 1 is recommended.";
-		echo "You can make changes from the default settings in the next step.";
+	        echo "Pilih pengaturan Apache/php yang Anda inginkan. Opsi 1 direkomendasikan.";
+		echo "Anda dapat melakukan perubahan dari pengaturan default pada langkah berikutnya.";
 	        echo "";
-		echo "1: Apache 2.4, mod_ruid2, php ${PHP_V_DEF}. Can be set to use mod_php, php-FPM or fastcgi.";
+		echo "1: Apache 2.4, mod_ruid2, php ${PHP_V_DEF}. Dapat diatur untuk digunakan mod_php, php-FPM or fastcgi.";
 	    echo "2: Apache 2.4, mod_ruid2, php 5.6 (php 5.6 is end-of-life)";
 	    echo "3: Apache 2.4, mod_ruid2, php 5.6 (php 5.6 is end-of-life), MariaDB 5.5";
 		echo "4: Apache 2.4, php-fpm, php ${PHP_V_DEF}.";
@@ -858,11 +860,11 @@ if [ $CMD_LINE -eq 0 ]; then
 		echo "      Post any issues with custombuild to the forum: http://forum.directadmin.com/forumdisplay.php?f=61";
 	        echo "";
 
-		echo -n "Enter your choice (1, 2, 3 or 4): ";
+		echo -n "Masukkan pilihan Anda (1, 2, 3 or 4): ";
 
 	        read onetwo;
                         until [ "$onetwo" = "1" ] || [ "$onetwo" = "2" ] || [ "$onetwo" = "3" ] || [ "$onetwo" = "4" ]; do
-                                echo -n "Please enter 1, 2, 3 or 4: "
+                                echo -n "Silakan pilih 1, 2, 3 or 4: "
                                 read onetwo
                         done
 
@@ -920,10 +922,10 @@ if [ $CMD_LINE -eq 0 ]; then
 		chmod 755 $BUILD
 
                 echo "";
-                echo -n "Would you like the default settings of apache ${AP_VER}${RUID} and php ${PHP_V} ${PHP_T}? (y/n): ";
+                echo -n "Apakah Anda ingin pengaturan default apache ${AP_VER}${RUID} dan php ${PHP_V} ${PHP_T}? (y/n): ";
                 read yesno;
                 if [ "$yesno" = "n" ]; then
-                        echo "You have chosen to customize the custombuild options.  Please wait while options configurator is downloaded... ";
+                        echo "Anda telah memilih untuk menyesuaikan opsi custombuild. Harap tunggu sementara konfigurator opsi diunduh... ";
                         echo "";
 
                         if [ -e $BUILD ]; then
@@ -957,7 +959,7 @@ if [ $CMD_LINE -eq 0 ]; then
 			fi
 		fi
         else
-		echo "invalid number entered: '$onetwo'";
+		echo "nomor yang dimasukkan tidak valid: '$onetwo'";
 		sleep 5;
 		exit 1;
         fi
@@ -993,7 +995,7 @@ fi
 
 ##########
 
-echo "beginning pre-checks, please wait...";
+echo "memulai pra-pemeriksaan, harap tunggu...";
 
 # Things to check for:
 #
@@ -1858,7 +1860,9 @@ ln -s ../sbin/sendmail /usr/lib/sendmail
 
 if [ -s /usr/local/directadmin/conf/directadmin.conf ]; then
 	echo ""
-	echo "Install Complete!";
+	echo "Install Selesai!";
+ 	echo "Brikan Bintang Dan Ikuti Github Saya";
+  	echo "https://github.com/anjasamar";
 	echo "If you cannot connect to the login URL, then it is likely that a firewall is blocking port 2222. Please see:"
 	echo "  https://help.directadmin.com/item.php?id=75"
 fi
