@@ -232,8 +232,8 @@ else
 	B64=`uname -m | grep -c 64`
 	if [ "$B64" -gt 0 ]; then
 		echo "*** 64-bit OS ***";
-		echo "*** SCRIPT INSTALL DA V1.64.2 NULLED BY ATSi - Anjas Amar Pradana ***";
-		sleep 4;
+		echo "*** |SCRIPT INSTALL DA V1.64.2 NULLED BY ATSi - Anjas Amar Pradana| ***";
+		sleep 10;
 		B64=1
 	fi
 fi
@@ -533,8 +533,8 @@ echo "*****************************************************";
 sleep 20;
 fi
 
-		echo "* Installing pre-install packages ....";
-  		sleep 5;
+		echo "* Menginstal paket pra-instal, mohon tunggu ....";
+  		sleep 10;
 		if [ "$OS" = "FreeBSD" ]; then
 			if [ "${OS_MAJ_VER}" -ge 12 ]; then
 				pkg install -y gcc gmake perl5 wget bison flex cyrus-sasl cmake python autoconf libtool libarchive iconv bind911 mailx webalizer gettext-runtime udns sudo psmisc
@@ -669,11 +669,11 @@ if [ "$OS" = "FreeBSD" ]; then
 		        fi
 		else
 	        	# more than one
-		        echo "The following ethernet devices were found. Please enter the name of the one you wish to use:";
+		        echo "Perangkat ethernet berikut ditemukan. Silakan masukkan nama yang ingin Anda gunakan:";
 		        echo "";
 		        echo $DEVS;
 		        echo "";
-		        echo -n "Enter the device name: ";
+		        echo -n "Masukkan nama perangkat: ";
 		        read ETH_DEV;
 		fi
 	fi
@@ -685,7 +685,7 @@ if [ "$OS" = "FreeBSD" ]; then
 		IP=`/sbin/ifconfig $ETH_DEV | grep 'inet ' | head -n1 | cut -d\  -f2`
 	fi
 
-	echo "Using $IP";
+	echo "Menggunakan $IP";
 
 	NM_HEX=`/sbin/ifconfig $ETH_DEV | grep 'inet ' | head -n1 | cut -d\  -f4 | cut -dx -f2 | tr '[a-f]' '[A-F]'`
 
@@ -947,7 +947,7 @@ if [ $CMD_LINE -eq 0 ]; then
                                 echo "unable to download the build file.  Using defaults instead.";
                         fi
                 else
-                        echo "Using the default settings for custombuild.";
+                        echo "Menggunakan pengaturan default untuk custombuild.";
 			if [ "$onetwo" != "3" ]; then
 				$BUILD set php1_release ${PHP_V}
 				$BUILD set php1_mode ${PHP1_MODE}
@@ -1009,7 +1009,7 @@ fi
 ##########
 
 echo "memulai pra-pemeriksaan, harap tunggu...";
-sleep 5;
+sleep 10;
 
 # Things to check for:
 #
