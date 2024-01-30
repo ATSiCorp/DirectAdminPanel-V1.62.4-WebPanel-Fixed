@@ -64,7 +64,7 @@ ADMIN_PASS=`random_pass`
 #RAND_LEN=`perl -le'print 16+int(rand(9))'`
 #DB_ROOT_PASS=`perl -le"print map+(A..Z,a..z,0..9)[rand 62],0..$RAND_LEN"`;
 DB_ROOT_PASS=`random_pass`
-DOWNLOAD_BETA=false
+DOWNLOAD_BETA=true
 if [ "$1" = "beta" ] || [ "$2" = "beta" ]; then
 	DOWNLOAD_BETA=true
 fi
@@ -221,7 +221,7 @@ else
 	B64=`uname -m | grep -c 64`
 	if [ "$B64" -gt 0 ]; then
 		echo "*** 64-bit OS ***";
-		echo "*** SCRIPT INSTALL DA 1.64.2 NULLED BY PUARUVN ***";
+		echo "*** SCRIPT INSTALL DA 1.64.2 NULLED BY ANJASAMAR ***";
 		sleep 2;
 		B64=1
 	fi
@@ -834,7 +834,7 @@ fi
 
 if [ $CMD_LINE -eq 0 ]; then
 
-	PHP_V_DEF=7.4
+	PHP_V_DEF=8.1
 	PHP_M_DEF=php-fpm
 	PHP_RUID_DEF=yes
 
@@ -842,7 +842,7 @@ if [ $CMD_LINE -eq 0 ]; then
 		onetwo=1
 	elif [ "${SERVICES}" = "services_debian90_64.tar.gz" ] || [ "${SERVICES}" = "services_debian100_64.tar.gz" ]; then
 		onetwo=1
-		PHP_V_DEF=7.4
+		PHP_V_DEF=8.1
 		PHP_M_DEF=php-fpm
 		PHP_RUID_DEF=no
 	else
