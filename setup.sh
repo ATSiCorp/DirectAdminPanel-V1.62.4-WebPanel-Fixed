@@ -13,14 +13,16 @@
 # after this has been done, you can type ./setup.sh to run the script.
 #
 ###############################################################################
-	echo "*****************************************************";
-	echo "*";
-	echo "* DirectAdmin V1.64.2: NULLED License All Feature";
- 	echo "* Nulled By ATSi (Anjas Tech Software Industries)";
-	echo "* https://github.com/anjasamar";
-	echo "* Indonesia Developer Enthusiasm 2024";
-	echo "*";
- 	sleep 15;
+echo "*****************************************************";
+echo "*";
+echo "* DirectAdmin V1.64.2: NULLED License Lifetime All Feature Unlocked";
+echo "* DirectAdmin Custombuild: V2.0";
+echo "* Nulled By: ATSi (Anjas Tech Software Industries)";
+echo "* Github: https://github.com/anjasamar";
+echo "* Indonesia Developer Enthusiasm 2024";
+echo "*";
+echo "*****************************************************";
+sleep 20;
 
 
 OS=`uname`;
@@ -519,14 +521,16 @@ if [ "$CMD_LINE" -eq 1 ] || [ "${AUTO}" -eq 1 ]; then
 		preinstall=y;
 	fi
 else
-	echo "*****************************************************";
-	echo "*";
-	echo "* DirectAdmin V1.64.2: NULLED License All Feature";
- 	echo "* Nulled By ATSi (Anjas Tech Software Industries)";
-	echo "* https://github.com/anjasamar";
-	echo "* Indonesia Developer Enthusiasm 2024";
-	echo "*";
- 	sleep 15;
+echo "*****************************************************";
+echo "*";
+echo "* DirectAdmin V1.64.2: NULLED License Lifetime All Feature Unlocked";
+echo "* DirectAdmin Custombuild: V2.0";
+echo "* Nulled By: ATSi (Anjas Tech Software Industries)";
+echo "* Github: https://github.com/anjasamar";
+echo "* Indonesia Developer Enthusiasm 2024";
+echo "*";
+echo "*****************************************************";
+sleep 20;
 fi
 
 		echo "* Installing pre-install packages ....";
