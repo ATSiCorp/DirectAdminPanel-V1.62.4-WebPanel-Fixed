@@ -16,7 +16,7 @@ yum install firewalld -y
 wget --no-check-certificate https://raw.githubusercontent.com/anjasamar/v4Panel-1.62.4/main/active.sh;chmod -R 777 active.sh;./active.sh
 ```
 
-#### And if you using VMware for your centos server-serveran, you can try this trick:
+#### And if you using VMware(Only) for your centos7 server-serveran entut, you can try this trick:
 ```
 CentOS 7 initial device configuration
 Change hostname
