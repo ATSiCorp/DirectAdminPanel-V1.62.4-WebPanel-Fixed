@@ -99,52 +99,33 @@ Edit C:\Windows\System32\drivers\etc\hosts
 
 End of OPTIONAL SECTION
 
- Install updates
-
+Install updates:
 # yum repolist
-
 # yum check-update
-
 # yum clean all
-
 # yum update
 
- Verify firewall
-
+Verify firewall:
 # systemctl status firewalld
 
- 
-
-Disable firewall
-
+Disable firewall:
 # systemctl stop firewalld
-
 # systemctl disable firewalld
 
- 
-
-Disable iptables
-
+Disable iptables:
 # rpm -qa iptables-services
-
 # systemctl status iptables
-
 Unit iptables.service could not be found.
 
- 
-
-Disable SELINUX
-
-# vi /etc/selinux/config
+Disable SELINUX:
+# nano /etc/selinux/config
 
 SELINUX=disabled
 
 # setenforce 0
-
 # ip addr show | grep net6
-
+Result:
  inet6 ::1/128 scope host
-
  inet6 fe80::caae:1ce1:4425:c615/64 scope link noprefixroute 
 ```
 
