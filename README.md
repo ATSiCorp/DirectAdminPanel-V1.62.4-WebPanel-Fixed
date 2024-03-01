@@ -82,7 +82,7 @@ Set a fixed IP Address
 
  # reboot now
 
-OPTIONAL:
+OPTIONAL SECTION:
 At your Windows machine edit hosts file
 
 Edit C:\Windows\System32\drivers\etc\hosts
@@ -93,11 +93,59 @@ Edit C:\Windows\System32\drivers\etc\hosts
 
 #            ::1            localhost
 
-192.168.101.218 master master
+2.2.2.2 atsi.sh atsi.sh
 
 # 127.0.0.1 view-localhost # view localhost server
 
-# End of section 
+End of OPTIONAL SECTION
+
+ Install updates
+
+# yum repolist
+
+# yum check-update
+
+# yum clean all
+
+# yum update
+
+ Verify firewall
+
+# systemctl status firewalld
+
+ 
+
+Disable firewall
+
+# systemctl stop firewalld
+
+# systemctl disable firewalld
+
+ 
+
+Disable iptables
+
+# rpm -qa iptables-services
+
+# systemctl status iptables
+
+Unit iptables.service could not be found.
+
+ 
+
+Disable SELINUX
+
+# vi /etc/selinux/config
+
+SELINUX=disabled
+
+# setenforce 0
+
+# ip addr show | grep net6
+
+ inet6 ::1/128 scope host
+
+ inet6 fe80::caae:1ce1:4425:c615/64 scope link noprefixroute 
 ```
 
 #### Manual Active:
