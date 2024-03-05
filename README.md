@@ -3,12 +3,7 @@
 ## I forked this repo and updating, dan fixing some feature and fixing error for some package here.
 ## Install (Only) for Centos 7:
 ```
-yum -y install nano wget perl;wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/setup.sh;chmod +x setup.sh;sed -i 's/\r//' setup.sh;./setup.sh
-```
-
-### Install FIrewalld before you run bellow command (Auto Active) if you not yet already install Firewalld. if You have installed before ignore this command:
-```
-yum install firewalld -y
+yum -y install nano wget firewalld perl;wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/setup.sh;chmod +x setup.sh;sed -i 's/\r//' setup.sh;./setup.sh
 ```
 
 ### Auto Active (Only eth0) if you get stuck can't access admin panel port on browser:
@@ -122,6 +117,7 @@ Result:
 ### Manual Active:
 #### Dont Forget To Change Your Choice Zone Like (External, Home, Default: Public, ETC)
 ```
+systemctl start firewalld
 firewall-cmd --zone=external --add-port=2222/tcp --permanent
 firewall-cmd --zone=external --add-port=21/tcp --permanent
 firewall-cmd --zone=external --add-port=80/tcp --permanent
