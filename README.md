@@ -120,7 +120,7 @@ Result:
 ```
 
 ### Manual Active:
-#### Dont Forget To Change Your Choice Zone Like (External, Home, Public, ETC)
+#### Dont Forget To Change Your Choice Zone Like (External, Home, Default: Public, ETC)
 ```
 firewall-cmd --zone=external --add-port=2222/tcp --permanent
 firewall-cmd --zone=external --add-port=21/tcp --permanent
@@ -142,10 +142,10 @@ rm -rf /usr/local/directadmin/conf/license.key
 wget -O /usr/local/directadmin/conf/license.key 'http://license.vsicloud.com/getLic.php'
 chmod 600 /usr/local/directadmin/conf/license.key
 chown diradmin:diradmin /usr/local/directadmin/conf/license.key
-ifconfig eth0:100 CHANGE_TO_YOUR_IP netmask CHANGE_TO_YOUR_NETMASK up
+fconfig eth0:100 176.99.3.34 netmask 255.0.0.0 up
 echo 'DEVICE=eth0:100' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100
-echo 'IPADDR=CHANGE_TO_YOUR_IP' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100
-echo 'NETMASK=CHANGE_TO_YOUR_NETMASK' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100
+echo 'IPADDR=176.99.3.34' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100
+echo 'NETMASK=255.0.0.0' >> /etc/sysconfig/network-scripts/ifcfg-eth0:100
 service network restart
 /usr/bin/perl -pi -e 's/^ethernet_dev=.*/ethernet_dev=eth0:100/' /usr/local/directadmin/conf/directadmin.conf
 service directadmin start
