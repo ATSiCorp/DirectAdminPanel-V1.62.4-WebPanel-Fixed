@@ -75,7 +75,7 @@ firewall-cmd --zone=trusted --add-port=143/tcp --permanent
 firewall-cmd --zone=trusted --add-port=587/tcp --permanent
 firewall-cmd --zone=trusted --add-port=993/tcp --permanent
 firewall-cmd --zone=trusted --add-port=995/tcp --permanent
-sudo firewall-cmd --zone=external --change-interface=eth0 --permanent
+firewall-cmd --zone=external --change-interface=eth0 --permanent
 firewall-cmd --reload
 systemctl restart directadmin
 cd /usr/local/directadmin/conf/
