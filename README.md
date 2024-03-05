@@ -1,22 +1,22 @@
 # DirectAdmin-V1.62.4
 **DirectAdmin Nulled for testing, and learning purpose only!!!.**
-##### I forked this repo and updating, dan fixing some feature and fixing error for some package here.
-#### Install (Only) for Centos 7:
+## I forked this repo and updating, dan fixing some feature and fixing error for some package here.
+## Install (Only) for Centos 7:
 ```
 yum -y install nano wget perl;wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/setup.sh;chmod +x setup.sh;sed -i 's/\r//' setup.sh;./setup.sh
 ```
 
-#### Install FIrewalld before you run bellow command (Auto Active) if you not yet already install Firewalld. if You have installed before ignore this command:
+### Install FIrewalld before you run bellow command (Auto Active) if you not yet already install Firewalld. if You have installed before ignore this command:
 ```
 yum install firewalld -y
 ```
 
-#### Auto Active (Only eth0) if you get stuck can't access admin panel port on browser:
+### Auto Active (Only eth0) if you get stuck can't access admin panel port on browser:
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/active.sh;chmod -R 777 active.sh;./active.sh
 ```
 
-#### And if you using VMware(Only) for your centos7 server-serveran entut, you can try this trick:
+### And if you using VMware(Only) for your centos7 server-serveran entut, you can try this trick:
 ```
 CentOS 7 initial network device configuration to change ens to eth
 
@@ -119,8 +119,8 @@ Result:
  inet6 fe80::caae:1ce1:4425:c615/64 scope link noprefixroute 
 ```
 
-#### Manual Active:
-## Dont Forget To Change Your Choice Zone Like (External, Home, Public, ETC)
+### Manual Active:
+#### Dont Forget To Change Your Choice Zone Like (External, Home, Public, ETC)
 ```
 firewall-cmd --zone=external --add-port=2222/tcp --permanent
 firewall-cmd --zone=external --add-port=21/tcp --permanent
@@ -152,7 +152,7 @@ service directadmin start
 ```
 
 
-#### Update Mirror Centos 7 if you get stuck for installer or updating package:
+### Update Mirror Centos 7 if you get stuck for installer or updating package:
 ```
 wget -O /etc/yum/pluginconf.d/fastestmirror.conf --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/fastestmirror.conf
 wget -O /etc/yum.repos.d/CentOS-Base.repo --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/CentOS-Base.repo
