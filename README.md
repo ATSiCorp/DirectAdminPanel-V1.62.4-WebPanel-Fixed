@@ -120,12 +120,20 @@ Result:
 ```
 
 #### Manual Active:
+## Dont Forget To Change Your Choice Zone Like (External, Home, Public, ETC)
 ```
-firewall-cmd --zone=public --add-port=2222/tcp --permanent
-firewall-cmd --zone=public --add-port=21/tcp --permanent
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --zone=public --add-port=443/tcp --permanent
-firewall-cmd --zone=public --add-port=25/tcp --permanent
+firewall-cmd --zone=external --add-port=2222/tcp --permanent
+firewall-cmd --zone=external --add-port=21/tcp --permanent
+firewall-cmd --zone=external --add-port=80/tcp --permanent
+firewall-cmd --zone=external --add-port=443/tcp --permanent
+firewall-cmd --zone=external --add-port=53/tcp --permanent
+firewall-cmd --zone=external --add-port=23/tcp --permanent
+firewall-cmd --zone=external --add-port=110/tcp --permanent
+firewall-cmd --zone=external --add-port=143/tcp --permanent
+firewall-cmd --zone=external --add-port=587/tcp --permanent
+firewall-cmd --zone=external --add-port=993/tcp --permanent
+firewall-cmd --zone=external --add-port=995/tcp --permanent
+sudo firewall-cmd --zone=external --change-interface=eth0 --permanent
 firewall-cmd --reload
 systemctl restart directadmin
 cd /usr/local/directadmin/conf/
