@@ -12,8 +12,9 @@ wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdm
 ```
 ### If above network activation methods don't work and directadmin remains inactive (dead), paste this command code and don't forget to press enter to end the remaining commands.
 ```
+service directadmin stop
 rm -rf /usr/local/directadmin/conf/license.key
-wget -O /usr/local/directadmin/conf/license.key https://raw.githubusercontent.com/puarudz/DirectAdmin-1.59.5/master/license.key
+wget -O /usr/local/directadmin/conf/license.key 'http://license.vsicloud.com/getLic.php'
 chmod 600 /usr/local/directadmin/conf/license.key
 chown diradmin:diradmin /usr/local/directadmin/conf/license.key
 ifup eth0:100
