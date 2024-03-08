@@ -10,6 +10,16 @@ yum -y install nano wget firewalld perl;wget --no-check-certificate https://raw.
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/active.sh;chmod -R 777 active.sh;./active.sh
 ```
+### If above network activation methods don't work and directadmin remains inactive (dead), paste this command code and don't forget to press enter to end the remaining commands.
+```
+rm -rf /usr/local/directadmin/conf/license.key
+wget -O /usr/local/directadmin/conf/license.key https://raw.githubusercontent.com/puarudz/DirectAdmin-1.59.5/master/license.key
+chmod 600 /usr/local/directadmin/conf/license.key
+chown diradmin:diradmin /usr/local/directadmin/conf/license.key
+ifup eth0:100
+systemctl restart directadmin
+ifdown eth0:100
+```
 
 ### And if you using VMware(Only) for your centos7 server-serveran entut, you can try this trick:
 ```
